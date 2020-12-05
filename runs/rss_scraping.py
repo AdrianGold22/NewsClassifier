@@ -12,7 +12,7 @@ urls = {
 }
 
 
-def rss_scrap(urls_n, font):
+def rss_scrap(urls_n, file_name):
     sc = Scraping()
     links = []
     for url in urls_n:
@@ -26,7 +26,7 @@ def rss_scrap(urls_n, font):
                     first_link = re.findall('http.+<', str(link[0]))
                     list_links = first_link[0].split('<')
                     links.append([list_links[0], url])
-    return initial_data(font, links)
+    return initial_data(links, file_name)
 
 
 # data_location = rss_scrap(urls, 'ES_News')
